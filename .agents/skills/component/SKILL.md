@@ -1,8 +1,7 @@
 ---
 name: component
-description: Создать компонент по конвенциям проекта
+description: Вызывай этот скилл при создании компоненты.
 argument-hint: "[ИмяКомпонента]"
-disable-model-invocation: true
 ---
 
 Создай компонент $0 в src/features/tasks/components/.

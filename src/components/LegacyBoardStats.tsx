@@ -1,4 +1,5 @@
 import type { Task } from '../features/tasks/model/task'
+import { Counter } from '../features/tasks/components/Counter'
 import styles from './LegacyBoardStats.module.css'
 
 interface LegacyBoardStatsProps {
@@ -18,13 +19,14 @@ function isOverdue(task: Task, today: string): boolean {
 
 export function LegacyBoardStats({ tasks }: LegacyBoardStatsProps) {
   const today = formatDateKey(new Date())
+  const overdueCount = tasks.filter((task) => isOverdue(task, today)).length
 
   return (
     <section className={styles.stats} aria-label="Статистика доски">
-      <div className={styles.stat}>Всего задач: {tasks.length}</div>
-      <div className={styles.stat}>В работе: {tasks.filter((task) => task.status === 'in-progress').length}</div>
-      <div className={styles.stat}>Готово: {tasks.filter((task) => task.status === 'done').length}</div>
-      <div className={styles.stat}>Просрочено: {tasks.filter((task) => isOverdue(task, today)).length}</div>
+      <Counter label="Всего задач" value={tasks.length} />
+      <Counter label="В работе" value={tasks.filter((task) => task.status === 'in-progress').length} tone="accent" />
+      <Counter label="Готово" value={tasks.filter((task) => task.status === 'done').length} />
+      <Counter label="Просрочено" value={overdueCount} tone={overdueCount > 0 ? 'danger' : 'default'} />
     </section>
   )
 }

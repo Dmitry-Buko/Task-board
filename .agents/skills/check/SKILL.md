@@ -1,7 +1,6 @@
 ---
 name: check
-description: Прогон готовности к сдаче из AGENTS.md — npm run check и npm run build со сводкой по стадиям
-disable-model-invocation: true
+description: Прогон готовности к сдаче из AGENTS.md — npm run check и npm run build со сводкой по стадиям. Вызывать при готовности задания к сдаче.
 allowed-tools: Bash(npm run check:*), Bash(npm run build:*)
 ---
 
