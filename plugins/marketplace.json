@@ -1,0 +1,19 @@
+{
+  "name": "dev-task-board-6210a5aa",
+  "plugins": [
+    {
+      "name": "board-reviewers",
+      "source": "./board-reviewers",
+      "version": "0.3.0",
+      "description": "Учебный плагин: субагенты convention-reviewer (ревью по конвенциям), test-guard (контрольный прогон перед сдачей) и pr-reviewer (ревью готового диффа по рискам проекта).",
+      "displayName": "Board Reviewers"
+    },
+    {
+      "name": "board-kit",
+      "source": "./board-kit",
+      "version": "0.1.0",
+      "description": "Учебный плагин: скилл page (создать страницу с роутом по конвенциям) и команда /routes (карта маршрутов приложения).",
+      "displayName": "Board Kit"
+    }
+  ]
+}

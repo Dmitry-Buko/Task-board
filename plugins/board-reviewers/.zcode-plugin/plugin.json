@@ -1,0 +1,7 @@
+{
+  "name": "board-reviewers",
+  "version": "0.3.0",
+  "description": "Учебный плагин: три субагента — convention-reviewer (read-only ревью кода по конвенциям AGENTS.md), test-guard (страж готовности: контрольный npm run check перед сдачей) и pr-reviewer (ревью готового диффа по рискам проекта).",
+  "author": { "name": "Dmitrij" },
+  "agents": "./agents"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "board-kit",
+  "version": "0.1.0",
+  "description": "Учебный плагин: скилл page (создать страницу с роутом по конвенциям) и команда /routes (карта маршрутов приложения).",
+  "author": { "name": "Dmitrij" },
+  "skills": "./skills",
+  "commands": "./commands"
+}

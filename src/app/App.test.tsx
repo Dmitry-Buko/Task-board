@@ -98,6 +98,7 @@ describe('App', () => {
 
     const column = await screen.findByRole('region', { name: 'В работе' })
     expect(within(column).getByText('Подготовить релиз')).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Войти' })).toHaveAttribute('href', '/login')
   })
 
   it('redirects unknown routes to the board', async () => {
@@ -105,6 +106,7 @@ describe('App', () => {
     render(<App repository={createRepositoryDouble()} />)
 
     expect(await screen.findByText('Подготовить релиз')).toBeInTheDocument()
+    expect(window.location.pathname).toBe('/')
   })
 
   it('creates a task from the dialog', async () => {
