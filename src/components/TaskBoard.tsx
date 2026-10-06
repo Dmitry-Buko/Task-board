@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import type { CreateTaskInput, Task, TaskStatus, UpdateTaskInput } from '../features/tasks/model/task'
 import { ConfirmDialog } from '../features/tasks/components/ConfirmDialog'
 import { TaskColumn } from '../features/tasks/components/TaskColumn'
@@ -109,6 +110,7 @@ export function TaskBoard({ repository }: TaskBoardProps) {
           <button className={styles.secondaryButton} type="button" onClick={() => setPendingConfirmation({ kind: 'reset' })}>
           Восстановить пример
         </button>
+          <Link className={styles.secondaryButton} to="/login">Войти</Link>
         </div>
       </header>
       <LegacyBoardStats tasks={tasks} />

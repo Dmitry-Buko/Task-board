@@ -40,6 +40,7 @@
   border: 1px solid transparent;
   padding: 0 16px;
   font-weight: 700;
+  text-decoration: none;
 }
 
 .primaryButton {
@@ -114,7 +115,8 @@
     justify-content: stretch;
   }
 
-  .headerActions button {
+  .headerActions button,
+  .headerActions a {
     flex: 1 1 150px;
   }
 

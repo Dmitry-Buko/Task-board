@@ -24,7 +24,13 @@ export function Register({ submitLabel = 'Зарегистрироваться',
     }
     setValidationError(undefined)
     setIsPending(true)
-    try { await onSubmit({ email, password }) } finally { setIsPending(false) }
+    try {
+      await onSubmit({ email, password })
+    } catch {
+      setValidationError('Не удалось отправить форму. Попробуйте ещё раз.')
+    } finally {
+      setIsPending(false)
+    }
   }
 
   return (

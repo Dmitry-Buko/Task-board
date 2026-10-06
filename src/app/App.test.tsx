@@ -100,6 +100,13 @@ describe('App', () => {
     expect(within(column).getByText('Подготовить релиз')).toBeInTheDocument()
   })
 
+  it('redirects unknown routes to the board', async () => {
+    window.history.pushState({}, '', '/unknown-path')
+    render(<App repository={createRepositoryDouble()} />)
+
+    expect(await screen.findByText('Подготовить релиз')).toBeInTheDocument()
+  })
+
   it('creates a task from the dialog', async () => {
     const user = userEvent.setup()
     const repository = createRepositoryDouble()
