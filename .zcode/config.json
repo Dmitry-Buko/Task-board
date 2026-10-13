@@ -1,0 +1,36 @@
+{
+  "hooks": {
+    "enabled": true,
+    "events": {
+      "PreToolUse": [
+        {
+          "matcher": "Edit|Write",
+          "hooks": [
+            {
+              "type": "process",
+              "command": "node",
+              "args": ["${ZCODE_PROJECT_DIR}/.zcode/hooks/protect-file.cjs"]
+            },
+            {
+              "type": "process",
+              "command": "node",
+              "args": ["${ZCODE_PROJECT_DIR}/.zcode/hooks/protect-legacy.cjs"]
+            }
+          ]
+        }
+      ],
+      "PostToolUse": [
+        {
+          "matcher": "Edit|Write",
+          "hooks": [
+            {
+              "type": "process",
+              "command": "node",
+              "args": ["${ZCODE_PROJECT_DIR}/.zcode/hooks/check-edited-file.cjs"]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
