@@ -1,4 +1,13 @@
 {
+  "mcp": {
+    "servers": {
+      "github": {
+        "type": "stdio",
+        "command": "C:\\Users\\HP ZBook 17 G3\\.zcode\\mcp\\github-mcp-server.exe",
+        "args": ["stdio", "--toolsets", "issues,repos", "--read-only"]
+      }
+    }
+  },
   "hooks": {
     "enabled": true,
     "events": {
