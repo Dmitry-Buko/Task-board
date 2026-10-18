@@ -58,3 +58,14 @@
 }
 
 .actions button:last-child:hover { background: #fef2f2; }
+
+.delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.actionIcon {
+  flex-shrink: 0;
+}
